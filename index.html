@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python & Infrastructure Engineer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#2563eb',
+secondary: '#3b82f6'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.typing-animation {
+border-right: 2px solid #3b82f6;
+animation: blink 1s infinite;
+}
+@keyframes blink {
+0%, 50% { border-color: #3b82f6; }
+51%, 100% { border-color: transparent; }
+}
+.skill-progress {
+transition: width 2s ease-in-out;
+}
+@keyframes blob {
+0% { transform: translate(0px, 0px) scale(1); }
+33% { transform: translate(30px, -50px) scale(1.1); }
+66% { transform: translate(-20px, 20px) scale(0.9); }
+100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+animation-delay: 2s;
+}
+.animation-delay-4000 {
+animation-delay: 4s;
+}
+.glass-card {
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hover-lift {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="font-['Pacifico'] text-2xl text-primary">Mehedin Hasan</div>
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-sun-line text-gray-600"></i>
+</button>
+<button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-gray-600"></i>
+</button>
+</div>
+</div>
+</div>
+<div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+<div class="px-4 py-2 space-y-2">
+<a href="#home" class="block py-2 text-gray-700 hover:text-primary">Home</a>
+<a href="#projects" class="block py-2 text-gray-700 hover:text-primary">Projects</a>
+<a href="#skills" class="block py-2 text-gray-700 hover:text-primary">Skills</a>
+<a href="#about" class="block py-2 text-gray-700 hover:text-primary">About</a>
+<a href="#contact" class="block py-2 text-gray-700 hover:text-primary">Contact</a>
+</div>
+</div>
+</nav>
+<section id="home" class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-sky-50 relative overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=modern%20tech%20abstract%20background%20with%20floating%203D%20elements%2C%20glass%20morphism%20effect%2C%20professional%20high-end%20design%2C%20soft%20blue%20gradient%20with%20dynamic%20shapes%20and%20particles%2C%20premium%20visual%20aesthetic&width=1920&height=1080&seq=hero-bg&orientation=landscape')] opacity-20 bg-cover bg-center"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-white/80 to-transparent"></div>
+</div>
+<div class="absolute w-full h-full">
+<div class="absolute top-20 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+<div class="absolute top-40 right-1/4 w-64 h-64 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+<div class="absolute -bottom-8 left-1/3 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+</div>
+<div class="absolute -right-64 -top-64 w-[800px] h-[800px] bg-primary opacity-[0.15] rounded-full blur-3xl"></div>
+<div class="absolute -left-64 -bottom-64 w-[800px] h-[800px] bg-secondary opacity-[0.15] rounded-full blur-3xl"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center space-x-2 px-4 py-1.5 glass-card rounded-full">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+<p class="text-sm font-medium bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Infrastructure & Network Engineer</p>
+</div>
+<h1 class="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+Python & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Infrastructure</span>
+</h1>
+<div class="text-xl text-gray-600 h-8">
+<span id="typing-text" class="typing-animation"></span>
+</div>
+<p class="text-lg text-gray-600 max-w-lg leading-relaxed">
+Specialized in network infrastructure, server maintenance, and automation. Leveraging Python to build robust monitoring systems and automate complex infrastructure tasks.
+</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="group bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 !rounded-button hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 whitespace-nowrap">
+View Projects
+<i class="ri-arrow-right-line ml-2 transition-transform group-hover:translate-x-1"></i>
+</button>
+<button class="group px-8 py-4 !rounded-button bg-white border-2 border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300 whitespace-nowrap">
+<i class="ri-download-line mr-2"></i>
+Download CV
+</button>
+</div>
+</div>
+<div class="flex justify-center lg:justify-end relative">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-20"></div>
+<div class="relative w-96 h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
+<img src="Mahadin.png" class="w-full h-full object-cover object-center">
+</div>
+<div class="absolute -bottom-4 right-4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+<div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="skills" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+Here are the technologies and tools I work with to build amazing applications
+</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+<div class="glass-card p-6 rounded-xl hover-lift text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-blue-100 rounded-full">
+<i class="ri-code-s-slash-line text-2xl text-blue-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Python</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 95%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-green-100 rounded-full">
+<i class="ri-global-line text-2xl text-green-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Django</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-purple-100 rounded-full">
+<i class="ri-flask-line text-2xl text-purple-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Flask</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-orange-100 rounded-full">
+<i class="ri-database-2-line text-2xl text-orange-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">PostgreSQL</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 88%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-red-100 rounded-full">
+<i class="ri-git-branch-line text-2xl text-red-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Git</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 92%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-indigo-100 rounded-full">
+<i class="ri-bar-chart-box-line text-2xl text-indigo-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">NumPy</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 80%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-teal-100 rounded-full">
+<i class="ri-table-line text-2xl text-teal-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Pandas</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-yellow-100 rounded-full">
+<i class="ri-leaf-line text-2xl text-yellow-600"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">MongoDB</h3>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full skill-progress" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projects" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+Here are some of my recent projects that showcase my skills and experience
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="glass-card rounded-xl overflow-hidden hover-lift group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="h-48 bg-gray-200 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=network%20operations%20center%20with%20multiple%20monitors%20displaying%20network%20topology%2C%20server%20status%2C%20and%20performance%20metrics%2C%20modern%20technical%20infrastructure%20visualization&width=400&height=300&seq=project-1&orientation=landscape" alt="Network Monitoring System" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Network Monitoring System</h3>
+<p class="text-gray-600 mb-4">
+Developed a comprehensive network monitoring system using Python and Prometheus, featuring real-time alerts, performance metrics, and automated incident response.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Python</span>
+<span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Prometheus</span>
+<span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Grafana</span>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="flex items-center text-primary hover:text-secondary transition-colors">
+<i class="ri-external-link-line w-4 h-4 flex items-center justify-center mr-1"></i>
+Live Demo
+</a>
+<a href="#" class="flex items-center text-gray-600 hover:text-gray-900 transition-colors">
+<i class="ri-github-line w-4 h-4 flex items-center justify-center mr-1"></i>
+GitHub
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+<div class="h-48 bg-gray-200 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=server%20automation%20and%20configuration%20management%20interface%2C%20showing%20deployment%20pipelines%2C%20infrastructure%20as%20code%2C%20and%20automated%20server%20provisioning%20screens&width=400&height=300&seq=project-2&orientation=landscape" alt="Server Automation Platform" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Server Automation Platform</h3>
+<p class="text-gray-600 mb-4">
+Built an automated server provisioning and management system using Python, Ansible, and Docker, reducing deployment time by 80% and ensuring consistent configurations.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Ansible</span>
+<span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Docker</span>
+<span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Python</span>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="flex items-center text-primary hover:text-secondary transition-colors">
+<i class="ri-external-link-line w-4 h-4 flex items-center justify-center mr-1"></i>
+Live Demo
+</a>
+<a href="#" class="flex items-center text-gray-600 hover:text-gray-900 transition-colors">
+<i class="ri-github-line w-4 h-4 flex items-center justify-center mr-1"></i>
+GitHub
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+<div class="h-48 bg-gray-200 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=network%20security%20monitoring%20dashboard%20with%20firewall%20rules%2C%20intrusion%20detection%2C%20and%20security%20analytics%2C%20cybersecurity%20operations%20interface&width=400&height=300&seq=project-3&orientation=landscape" alt="Security Automation System" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Security Automation System</h3>
+<p class="text-gray-600 mb-4">
+Implemented an automated security monitoring and response system using Python and ELK Stack, featuring threat detection, log analysis, and automated incident response.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Python</span>
+<span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">ELK Stack</span>
+<span class="px-3 py-1 bg-teal-100 text-teal-800 text-sm rounded-full">Security</span>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="flex items-center text-primary hover:text-secondary transition-colors">
+<i class="ri-external-link-line w-4 h-4 flex items-center justify-center mr-1"></i>
+Live Demo
+</a>
+<a href="#" class="flex items-center text-gray-600 hover:text-gray-900 transition-colors">
+<i class="ri-github-line w-4 h-4 flex items-center justify-center mr-1"></i>
+GitHub
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+My journey as a Python developer across different companies and roles
+</p>
+</div>
+<div class="space-y-8">
+<div class="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-900">Senior Python Developer</h3>
+<p class="text-primary font-semibold">TechCorp Solutions</p>
+</div>
+<span class="text-gray-600 bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">2022 - Present</span>
+</div>
+<ul class="text-gray-600 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Led development of microservices architecture serving 100K+ daily active users
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Implemented CI/CD pipelines reducing deployment time by 60%
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Mentored junior developers and conducted code reviews
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-900">Python Developer</h3>
+<p class="text-primary font-semibold">DataFlow Analytics</p>
+</div>
+<span class="text-gray-600 bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">2020 - 2022</span>
+</div>
+<ul class="text-gray-600 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Developed data processing pipelines handling 10TB+ of data daily
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Built RESTful APIs with Django REST Framework
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Optimized database queries improving performance by 40%
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-900">Junior Python Developer</h3>
+<p class="text-primary font-semibold">StartupHub Inc</p>
+</div>
+<span class="text-gray-600 bg-gray-100 px-3 py-1 rounded-full text-sm mt-2 md:mt-0">2019 - 2020</span>
+</div>
+<ul class="text-gray-600 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Developed web applications using Django and Flask frameworks
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Collaborated with cross-functional teams in agile environment
+</li>
+<li class="flex items-start">
+<i class="ri-check-line w-5 h-5 flex items-center justify-center text-primary mr-2 mt-0.5"></i>
+Participated in code reviews and testing processes
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">
+I'm always interested in hearing about new opportunities and projects. Let's connect!
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 mb-1">Email</h3>
+<p class="text-gray-600">alex.johnson@email.com</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
+<p class="text-gray-600">+1 (555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 mb-1">Location</h3>
+<p class="text-gray-600">San Francisco, CA</p>
+</div>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white text-gray-600 rounded-full transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm" placeholder="Your full name">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm" placeholder="your.email@example.com">
+</div>
+<div>
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm" placeholder="Project inquiry">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none" placeholder="Tell me about your project..."></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<div class="font-['Pacifico'] text-2xl text-primary mb-4">Alex Johnson</div>
+<p class="text-gray-400 mb-4">
+Python Developer passionate about building scalable solutions and clean code.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary text-gray-400 hover:text-white rounded-full transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<div class="space-y-2">
+<a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+<a href="#projects" class="block text-gray-400 hover:text-white transition-colors">Projects</a>
+<a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
+<a href="#about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+<a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to get updates on my latest projects and articles.</p>
+<div class="flex">
+<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+<button class="bg-primary hover:bg-secondary px-4 py-2 !rounded-button rounded-l-none whitespace-nowrap">
+Subscribe
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">© 2024 Alex Johnson. All rights reserved.</p>
+<button id="back-to-top" class="mt-4 md:mt-0 bg-gray-800 hover:bg-primary text-gray-400 hover:text-white px-4 py-2 !rounded-button transition-colors whitespace-nowrap">
+<i class="ri-arrow-up-line w-4 h-4 flex items-center justify-center mr-1"></i>
+Back to Top
+</button>
+</div>
+</div>
+</footer>
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+});
+</script>
+<script id="typing-animation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const typingText = document.getElementById('typing-text');
+const phrases = [
+'Network Infrastructure Management',
+'Server Automation & Monitoring',
+'System Performance Optimization',
+'Security Implementation & Hardening'
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+function typeEffect() {
+const currentPhrase = phrases[phraseIndex];
+if (isDeleting) {
+typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+charIndex--;
+} else {
+typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+charIndex++;
+}
+if (!isDeleting && charIndex === currentPhrase.length) {
+setTimeout(() => isDeleting = true, 2000);
+} else if (isDeleting && charIndex === 0) {
+isDeleting = false;
+phraseIndex = (phraseIndex + 1) % phrases.length;
+}
+const typingSpeed = isDeleting ? 50 : 100;
+setTimeout(typeEffect, typingSpeed);
+}
+typeEffect();
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+const backToTopBtn = document.getElementById('back-to-top');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetSection = document.querySelector(targetId);
+if (targetSection) {
+targetSection.scrollIntoView({ behavior: 'smooth' });
+}
+});
+});
+backToTopBtn.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+<script id="skill-animation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const skillBars = document.querySelectorAll('.skill-progress');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const bar = entry.target;
+const width = bar.style.width;
+bar.style.width = '0%';
+setTimeout(() => {
+bar.style.width = width;
+}, 200);
+}
+});
+});
+skillBars.forEach(bar => observer.observe(bar));
+});
+</script>
+<script id="theme-toggle-script">
+document.addEventListener('DOMContentLoaded', function() {
+const themeToggle = document.getElementById('theme-toggle');
+const icon = themeToggle.querySelector('i');
+themeToggle.addEventListener('click', function() {
+if (icon.classList.contains('ri-sun-line')) {
+icon.classList.remove('ri-sun-line');
+icon.classList.add('ri-moon-line');
+} else {
+icon.classList.remove('ri-moon-line');
+icon.classList.add('ri-sun-line');
+}
+});
+});
+</script>
+</body>
+</html>
